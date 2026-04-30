@@ -64,31 +64,45 @@ Sự khác nhau giữa `<thead>`, `<tbody>`, `<tfoot>` là:
 
 `<thead>`: tiêu đề cột,nằm ở đầu bảng
 `<tbody>`: dữ liệu chính,nằm ở giữa bảng
-`<tfoot>`: tổng kết,nằm ở phần cuối bản 
-dù có xếp không đúng thứ tự 3 thẻ trên thì dữ liệu nó vẫn sẽ hiển thị theo thứ tự là `<thead>` -> `<tbody>` -> `<tfoot>`
+`<tfoot>`: tổng kết,nằm ở phần cuối bản dù có xếp không đúng thứ tự 3 thẻ trên thì dữ liệu nó vẫn sẽ hiển thị theo thứ tự là `<thead>` -> `<tbody>` -> `<tfoot>`
 (tham chiếu tuan_1_html5/05_tables_hyperlinks.md + phần: Table bảng dữ liệu)
+
 Không nên dùng table cho việc làm layout là vì:
 - Sai semantic
 - Code phức tạp, khó bảo trì
-- Layout bằng table phải lồng `<tr>`, `<td>` chằng chịt, rất khó đọc và sửa
+- Layout bằng table phải lồng `<tr>`, `<td>` chằng chịt, rất khó đọc và 
+
 (tuan_1_html5/05_tables_hyperlinks.md + phần: Table bảng dữ liệu)
 
 # Phần B - Thực hành code 
 ## Câu B3
 
   Lỗi 1: Dòng 1 — `<!DOCTYPE>` thiếu khai báo html — Sửa thành `<!DOCTYPE html>`
+
   Lỗi 2: Dòng 2 — `<html>` thiếu thuộc tính lang — Sửa thành `<html lang="vi">`
+
   Lỗi 3: Dòng 4 — `<title>`Trang web không có thẻ đóng — Sửa thành `<title>Trang web</title>`
+
   Lỗi 4: Dòng 5 — `<meta charset="utf8">` sai giá trị charset — Sửa thành `<meta charset="UTF-8">`
+
   Lỗi 5: Dòng 8 — `<h1>Welcome to ShopTLU<h1>` thẻ đóng thiếu dấu / — Sửa thành `<h1>Welcome to ShopTLU</h1>`
+
   Lỗi 6: Dòng 11 — `<a href="home">Trang chủ<a>` thẻ đóng thiếu dấu / và href không dùng # — Sửa thành `<a href="#home">Trang chủ</a>`
+
   Lỗi 7: Dòng 19 — `<img src=iphone.jpg>` src không có dấu nháy và thiếu thuộc tính alt — Sửa thành `<img src="iphone.jpg" alt="iPhone 16 Pro">`
+
   Lỗi 8: Dòng 21 — `<p>Giá: <b>25.990.000đ</p></b>` thẻ đóng bị lồng sai thứ tự — Sửa thành `<p>Giá: <b>25.990.000đ</b></p>`
+
   Lỗi 9: Dòng 26 — Hàng đầu tiên của bảng dùng `<td>` thay vì `<th>`, và bảng thiếu `<thead>/<tbody>` — Sửa bằng cách thêm `<thead><tbody>` và đổi `<td>` thành `<th>` cho hàng tiêu đề
+
   Lỗi 10: Dòng 40 — Dùng `<main>` lần 2 cho sidebar — Một trang chỉ được có 1 thẻ `<main>`, sidebar phải dùng `<aside>` — Sửa thành `<aside>` nằm trong `<main>`
+
   Lỗi 11: Dòng 17 — `<h1>` nằm ngoài `<header>` và đứng trước `<header>` — Semantic sai, `<h1>` nên nằm trong `<header>`
+
   Lỗi 12: Dòng 45 — `<p>`Copyright 2026 không có thẻ đóng `</p>` — Sửa thành `<p>Copyright 2026</p>`
+
   Lỗi 13: Dòng 20 — `<h3>Sản phẩm hot</h3>` nhảy từ `<h1>` xuống thẳng `<h3>`, bỏ qua `<h2>` — Sai cấu trúc heading, sửa thành `<h2>`
+
 
 ## Câu B4:
 Trong trang web thegioididong.com:
@@ -297,10 +311,10 @@ Input có 2 loại là text để nhập và button để click
 </html>
 ```
 ## Câu C2
-  Quan điểm “dùng <div> cho mọi thứ” tưởng nhanh nhưng không tối ưu. Về SEO, các thẻ semantic như <header>, <article>, <nav> giúp Google hiểu cấu trúc trang, từ đó xếp hạng tốt hơn. Nếu chỉ dùng <div>, nội dung trở nên “vô nghĩa” với máy tìm kiếm.
-  Về Accessibility, screen reader dựa vào semantic HTML để hỗ trợ người khiếm thị điều hướng nhanh (ví dụ nhảy tới <nav>). Dùng toàn <div> sẽ làm trải nghiệm kém hơn.
-  Ví dụ: trong trang blog, dùng <article> cho mỗi bài viết giúp công cụ tìm kiếm và người dùng hiểu rõ nội dung chính, tốt hơn nhiều so với <div class="post">.
-  Tuy vậy, <div> vẫn hữu ích cho layout (flexbox, grid) hoặc các khối không mang ý nghĩa nội dung.
+  Quan điểm “dùng `<div>` cho mọi thứ” tưởng nhanh nhưng không tối ưu. Về SEO, các thẻ semantic như `<header>`, `<article>`, `<nav>` giúp Google hiểu cấu trúc trang, từ đó xếp hạng tốt hơn. Nếu chỉ dùng `<div>`, nội dung trở nên “vô nghĩa” với máy tìm kiếm.
+  Về Accessibility, screen reader dựa vào semantic HTML để hỗ trợ người khiếm thị điều hướng nhanh (ví dụ nhảy tới `<nav>`). Dùng toàn `<div>` sẽ làm trải nghiệm kém hơn.
+  Ví dụ: trong trang blog, dùng `<article>` cho mỗi bài viết giúp công cụ tìm kiếm và người dùng hiểu rõ nội dung chính, tốt hơn nhiều so với `<div class="post">`.
+  Tuy vậy, `<div>` vẫn hữu ích cho layout (flexbox, grid) hoặc các khối không mang ý nghĩa nội dung.
   Kết luận: semantic HTML không thừa, mà giúp code rõ ràng, tốt cho SEO và người dùng.
 
 # Phần D - Video Thực hành OBS
