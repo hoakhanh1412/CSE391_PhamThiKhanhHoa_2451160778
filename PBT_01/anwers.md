@@ -308,8 +308,11 @@ Câu C1
 </html>
 
 Câu C2
-Quan điểm “dùng <div> cho mọi thứ” tưởng nhanh nhưng không tối ưu. Về SEO, các thẻ semantic như <header>, <article>, <nav> giúp Google hiểu cấu trúc trang, từ đó xếp hạng tốt hơn. Nếu chỉ dùng <div>, nội dung trở nên “vô nghĩa” với máy tìm kiếm.
-Về Accessibility, screen reader dựa vào semantic HTML để hỗ trợ người khiếm thị điều hướng nhanh (ví dụ nhảy tới <nav>). Dùng toàn <div> sẽ làm trải nghiệm kém hơn.
-Ví dụ: trong trang blog, dùng <article> cho mỗi bài viết giúp công cụ tìm kiếm và người dùng hiểu rõ nội dung chính, tốt hơn nhiều so với <div class="post">.
-Tuy vậy, <div> vẫn hữu ích cho layout (flexbox, grid) hoặc các khối không mang ý nghĩa nội dung.
-Kết luận: semantic HTML không thừa, mà giúp code rõ ràng, tốt cho SEO và người dùng.
+  Quan điểm “dùng <div> cho mọi thứ” tưởng nhanh nhưng không tối ưu. Về SEO, các thẻ semantic như <header>, <article>, <nav> giúp Google hiểu cấu trúc trang, từ đó xếp hạng tốt hơn. Nếu chỉ dùng <div>, nội dung trở nên “vô nghĩa” với máy tìm kiếm.
+  Về Accessibility, screen reader dựa vào semantic HTML để hỗ trợ người khiếm thị điều hướng nhanh (ví dụ nhảy tới <nav>). Dùng toàn <div> sẽ làm trải nghiệm kém hơn.
+  Ví dụ: trong trang blog, dùng <article> cho mỗi bài viết giúp công cụ tìm kiếm và người dùng hiểu rõ nội dung chính, tốt hơn nhiều so với <div class="post">.
+  Tuy vậy, <div> vẫn hữu ích cho layout (flexbox, grid) hoặc các khối không mang ý nghĩa nội dung.
+  Kết luận: semantic HTML không thừa, mà giúp code rõ ràng, tốt cho SEO và người dùng.
+
+Phần D - Video Thực hành OBS
+link gg drive phần video của em https://drive.google.com/file/d/1UHN0PrYhw1E9ukiSuGYsT1IOeUg5QkTi/view?usp=sharing
