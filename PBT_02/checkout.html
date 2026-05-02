@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBT_02 Hòa</title>
+</head>
+
+<body>
+
+<h1>Form đặt hàng</h1>
+
+
+<h2>Giỏ hàng</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Sản phẩm</th>
+      <th>Đơn giá</th>
+      <th>Số lượng</th>
+      <th>Thành tiền</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>iPhone 17 Pro Max</td>
+      <td>30.000.000đ</td>
+      <td>1</td>
+      <td>30.000.000đ</td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>AirPods Pro</td>
+      <td>6.000.000đ</td>
+      <td>1</td>
+      <td>6.000.000đ</td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>Ốp lưng</td>
+      <td>500.000đ</td>
+      <td>2</td>
+      <td>1.000.000đ</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="4"><strong>Tổng cộng</strong></td>
+      <td><strong>37.000.000đ</strong></td>
+    </tr>
+  </tfoot>
+</table>
+
+<hr>
+
+
+<form>
+
+  <h2>Thanh toán</h2>
+
+  <p>Phương thức thanh toán:</p>
+  <label><input type="radio" name="payment" required> COD</label><br>
+  <label><input type="radio" name="payment"> Chuyển khoản</label><br>
+  <label><input type="radio" name="payment"> Ví điện tử</label>
+
+  <br><br>
+
+  <label>Mã giảm giá:</label><br>
+  <input type="text"
+         placeholder="SALE2026"
+         pattern="SALE[0-9]{4}"
+         title="Nhập đúng dạng SALE + 4 số">
+
+  <br><br>
+
+  <label>Ghi chú:</label><br>
+  <textarea rows="4" cols="40"></textarea>
+
+  <hr>
+
+  <h2>Thông tin giao hàng</h2>
+
+  <label>Ngày giao hàng mong muốn:</label><br>
+  <input type="date" min="2026-05-03" required>
+
+  <br><br>
+
+  <label>Khung giờ:</label><br>
+  <select>
+    <option>Sáng 8-12h</option>
+    <option>Chiều 14-18h</option>
+    <option>Tối 18-21h</option>
+  </select>
+
+  <br><br>
+
+  <label>Thời gian giao hàng (ngày):</label><br>
+  <input type="range" min="1" max="7" step="1">
+
+  <br><br>
+
+  <button type="submit" aria-label="Xác nhận đặt hàng">
+    Xác nhận đặt hàng
+  </button>
+
+</form>
+
+</body>
+</html>
