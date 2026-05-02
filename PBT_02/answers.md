@@ -91,4 +91,92 @@ Cách 2 — `<figure>` + `<figcaption>`
   Ví dụ thực tế:
 - Trang chi tiết sản phẩm → ảnh sản phẩm kèm tên, giá, màu sắc bên dưới.
 
+# Phần C - Phân tích & Suy luận
+## Câu C1
+1. Lỗi 1: Dòng 2 — Input "Tên" không có `<label for="...">`, vi phạm accessibility
+
+```html
+<label for="name">Tên:</label> <input type="text" id="name" name="name" required />
+```
+
+2. Lỗi 2: Dòng 4 — Input email không có `<label>` và thiếu `name`, `id`, `required`
+
+```html
+<!-- Sửa -->
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Email của bạn" required />
+```
+
+3. Lỗi 3: Dòng 6 — Input password không có `<label>` và thiếu `name`, `id`, `required`, `minlength`
+
+```html
+<!-- Sửa -->
+<label for="password">Mật khẩu:</label>
+<input type="password" id="password" name="password" placeholder="Mật khẩu" minlength="8" required />
+```
+
+4. Lỗi 4: Dòng 7 — Input confirm password không có `<label>` và thiếu `name`, `id`, `required`
+
+```html
+<!-- Sửa -->
+<label for="confirm-password">Nhập lại mật khẩu:</label>
+<input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" minlength="8" required />
+```
+
+5. Lỗi 5: Dòng 9 — Input phone dùng `type="text"` thay vì `type="tel"`, thiếu `label`, `name`, `id`, `pattern`
+
+```html
+<!-- Sửa -->
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" value="0901234567" />
+```
+
+6. Lỗi 6: Dòng 11 — `<select>` thiếu `<label>`, `name`, `id` và thiếu option mặc định placeholder
+
+```html
+<!-- Sửa -->
+<label for="city">Thành phố:</label>
+<select id="city" name="city">
+  <option value="">-- Chọn thành phố --</option>
+  <option value="hanoi">Hà Nội</option>
+  <option value="hcm">TP.HCM</option>
+</select>
+```
+
+7. Lỗi 7: Dòng 16 — `<label>` không gắn với checkbox nào, thiếu `<input type="checkbox">`
+
+```html
+<!-- Sửa -->
+<input type="checkbox" id="terms" name="terms" required />
+<label for="terms">Tôi đồng ý điều khoản</label>
+```
+
+8. Lỗi 8: Dòng 20 — `<form>` thiếu `action` và `method`
+
+```html
+<!-- Sửa -->
+<form action="#" method="POST"></form>
+```
+
+## Câu C2
+1. Pattern regex cho CMND/CCCD và Số tài khoản
+
+- CMND/CCCD đúng 12 chữ số: `pattern="[0-9]{12}"`
+- Số tài khoản 10-15 chữ số: `pattern="[0-9]{10,15}"`
+
+2. HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa?
+
+- Chưa đủ, hoàn toàn không đủ cho ứng dụng ngân hàng.
+- HTML5 validation chỉ chạy trên trình duyệt, user có thể tắt JavaScript, dùng DevTools sửa DOM, hoặc gửi request thẳng lên server bằng Post mà bỏ qua toàn bộ validation phía frontend.
+
+3. 3 loại validation HTML5 KHÔNG THỂ làm được
+
+- So sánh 2 trường với nhau — ví dụ kiểm tra confirm PIN có khớp PIN không, HTML5 không thể so sánh giá trị giữa 2 input, bắt buộc dùng JavaScript.
+- Kiểm tra dữ liệu đã tồn tại trong database — ví dụ email đã được đăng ký chưa, số CCCD đã có tài khoản chưa, phải dùng JavaScript gọi API lên server để kiểm tra.
+- Validate theo logic nghiệp vụ phức tạp — ví dụ kiểm tra số CCCD có hợp lệ theo thuật toán của Bộ Công an không, kiểm tra số tài khoản có thuộc ngân hàng nào không, HTML5 chỉ kiểm tra được định dạng bề ngoài.
+
+4. 2 rủi ro bảo mật nếu chỉ validate Frontend, không validate Backend
+
+- Kẻ tấn công bypass hoàn toàn validation — dùng Postman gửi request thẳng lên server với dữ liệu giả mạo, độc hại như SQL injection mà không qua bất kỳ kiểm tra nào vì frontend bị bỏ qua hoàn toàn.
+- Dữ liệu rác và giả mạo tràn vào database — kẻ tấn công có thể tạo hàng nghìn tài khoản với CCCD giả, số tài khoản không tồn tại, hoặc inject mã độc vào các trường dữ liệu gây hỏng hệ thống, rò rỉ dữ liệu khách hàng khác.
 
