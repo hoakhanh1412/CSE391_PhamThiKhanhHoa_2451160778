@@ -7,6 +7,7 @@ Cách 1: Inline CSS (trong thẻ):
 - Ưu điểm: Nhanh, đơn giản, phù hợp chỉnh sửa 1 phần tử riêng lẻ, không cần tạo file CSS riêng
 - Nhược điểm: Code khó bảo trì khi website lớn, phải viết lặp lại nhiều lần, không tái sử dụng được
 - Khi nào nên dùng: Test nhanh giao diện, chỉnh sửa tạm thời
+
 Cách 2: Internal CSS (trong `<style>`):
 
 - VÍ DỤ: 
@@ -22,6 +23,7 @@ Cách 2: Internal CSS (trong `<style>`):
 - Khi nào nên dùng: website nhỏ, trang đơn, bài thực hành
 
 Cách 3: External CSS (file riêng)
+
 - VÍ DỤ:
 ```html 
 <head>
@@ -37,23 +39,30 @@ Câu hỏi thêm:
     Thứ tự ưu tiên: Inline CSS > Internal CSS > External CSS
 
     Giải thích: CSS hoạt động theo nguyên tắc Cascade(xếp tầng): độ ưu tiên selector, vị trí khai báo, loại CSS sử dụng
-    
+
     Inline CSS được viết trực tiếp trên element nên có độ ưu tiên cao hơn internal và external CSS
 
 ## Câu A2 - CSS Selectors - Dự đoán kết quả
 
-1. h1
+1. `h1`
+
 `<h1>ShopTLU</h1>`
+
 ShopTLU
 
-2. .price
+2. `.price`
+
 `<p class="price">25.990.000đ</p>`
 `<p class="price">45.990.000đ</p>`
+
 25.990.000đ
+
 45.990.000đ
 
-3. #app header
+3. `#app header`
+
 `<header class="top-bar dark">...</header>`
+
 ShopTLU
 
 Home
@@ -63,22 +72,29 @@ Products
 About
 
 4. `nav a:first-child`
+
 `<a href="/" class="active">Home</a>`
+
 Home
 
 5. `.product.featured h2`
+
 ```html
 <article class="product featured">
-    <h2>MacBook Pro</h2>```
+    <h2>MacBook Pro</h2>
+```
+
 MacBook Pro
 
-6. article > p
+6. `article > p`
+
 ```html
 <p class="price">25.990.000đ</p>
 <p>Mô tả sản phẩm...</p>
 <p class="price">45.990.000đ</p>
 <p>Mô tả sản phẩm...</p>
 ```
+
 25.990.000đ
 
 Mô tả sản phẩm...
@@ -89,11 +105,16 @@ Mô tả sản phẩm...
 
 7. `a[href="/"]`
 `<a href="/" class="active">Home</a>`
+
 Home
 
 8. `.top-bar.dark h1`
-`<header class="top-bar dark">
-     <h1>ShopTLU</h1>`
+
+```html 
+<header class="top-bar dark">
+     <h1>ShopTLU</h1>
+```
+
 ShopTLU
 
 ## Câu A3
@@ -149,7 +170,7 @@ margin: 10+10 = 20px
 -> khoảng cách giữa 2 box: 40px
 
 vì CSS dùng MAargin Collapse khi 2 block nằm dọc nhau margin chạm nhau thì brower chỉ lấy margin lớn hơn
-## Câu A4
+
 ## Câu A4 — Specificity (Độ ưu tiên)
 
 1. Tính specificity score (a, b, c) cho mỗi rule
@@ -171,4 +192,16 @@ vì CSS dùng MAargin Collapse khi 2 block nằm dọc nhau margin chạm nhau t
 
 - Element sẽ có màu đen do `!important` có specificity vô cực — phá vỡ toàn bộ quy tắc thông thường
 
-# Phần B: Thực hành Code
+# Phần B: Thực hành 
+
+## Bài B1 - Style trang Profile
+
+- 5 loại selector có trong file `style.css`
+
+1. Element selector: `body`, `header`, `table`, `footer`
+2. Class selector: `.active`
+3. ID selector: `#about_me`
+4. Descendant selector: `nav a`, `figure img`, `tbody tr`
+5. Pseudo-class selector:  `nav a:hover`, `tr:nth-child(even)`, `tr:hover`
+
+## Bài B2 

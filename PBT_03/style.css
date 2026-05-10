@@ -1,0 +1,105 @@
+/* Reset box model */
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffd700;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Hover */
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Active link */
+.active {
+  background-color: white;
+  color: #182848;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+/* Section */
+section,
+aside {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* Image */
+figure img {
+  border-radius: 10px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Table border */
+table,
+th,
+td {
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+/* Header row */
+thead {
+  background-color: #182848;
+  color: white;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+/* Hover row */
+tbody tr:hover {
+  background-color: #d6e4ff;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+}
