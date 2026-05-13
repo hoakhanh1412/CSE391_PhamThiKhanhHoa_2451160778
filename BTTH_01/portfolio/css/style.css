@@ -41,8 +41,9 @@ header {
 
 
 .nav-links {
-    display: flex;
     gap: 35px;
+
+    display: flex;
 }
 
 .nav-links a {
@@ -115,12 +116,17 @@ header {
     color: white;
 
     padding: 20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 40px;
 
     margin-bottom: 20px;
+
+    line-height: 1.3;
 }
 
 .hero p {
