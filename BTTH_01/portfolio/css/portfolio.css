@@ -190,3 +190,64 @@
         font-size: 32px;
     }
 }
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.95);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 2000;
+}
+
+/* SHOW LIGHTBOX */
+
+.lightbox:target {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+/* IMAGE */
+
+.lightbox img {
+
+    width: 80%;
+
+    max-width: 1000px;
+
+    border-radius: 12px;
+}
+
+/* CLOSE BUTTON */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 50px;
+
+    color: white;
+
+    text-decoration: none;
+}
