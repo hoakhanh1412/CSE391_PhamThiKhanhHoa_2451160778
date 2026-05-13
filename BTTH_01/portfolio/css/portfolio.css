@@ -83,9 +83,13 @@
 
 .portfolio-item {
 
+    position: relative;
+
     border-radius: 16px;
 
     overflow: hidden;
+
+    cursor: pointer;
 }
 
 /* IMAGE */
@@ -99,6 +103,63 @@
     object-fit: cover;
 
     display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+
+    transform: scale(1.1);
+}
+/* =========================
+   OVERLAY
+========================= */
+
+.portfolio-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(30, 41, 59, 0.6) 50%,
+        transparent 100%
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 25px;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+/* SHOW OVERLAY */
+
+.portfolio-item:hover .portfolio-overlay {
+
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.portfolio-overlay p {
+
+    font-size: 16px;
 }
 
 /* =========================
