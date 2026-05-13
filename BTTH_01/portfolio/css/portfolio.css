@@ -1,0 +1,131 @@
+/* =========================
+   PORTFOLIO SECTION
+========================= */
+
+.portfolio-section {
+
+    padding: 100px 0;
+
+    background: #f8fafc;
+}
+
+/* TITLE */
+
+.portfolio-section h2 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.portfolio-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 50px;
+}
+
+/* BUTTON */
+
+.filter-btn {
+
+    background: transparent;
+
+    border: 2px solid #6366f1;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-weight: bold;
+}
+
+/* ACTIVE */
+
+.filter-btn.active,
+.filter-btn:hover {
+
+    background: #6366f1;
+
+    color: white;
+}
+
+/* =========================
+   PORTFOLIO GRID
+========================= */
+
+.portfolio-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+/* ITEM */
+
+.portfolio-item {
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+/* IMAGE */
+
+.portfolio-item img {
+
+    width: 100%;
+
+    aspect-ratio: 4/3;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media (max-width: 992px) {
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-section h2 {
+
+        font-size: 32px;
+    }
+}
