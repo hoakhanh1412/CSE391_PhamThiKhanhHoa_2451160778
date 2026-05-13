@@ -1,0 +1,116 @@
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section {
+
+    padding: 100px 0;
+
+    background: #f8fafc;
+}
+
+/* TITLE */
+
+.skills-section h2 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 50px;
+}
+
+/* GRID */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+/* CARD */
+
+.skill-item {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* TOP */
+
+.skill-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+/* BAR */
+
+.skill-bar {
+
+    height: 12px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+/* PROGRESS */
+
+.skill-progress {
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6
+    );
+}
+
+/* WIDTH */
+
+.skill-progress.html {
+    width: 95%;
+}
+
+.skill-progress.css {
+    width: 90%;
+}
+
+.skill-progress.javascript {
+    width: 85%;
+}
+
+.skill-progress.react {
+    width: 80%;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
