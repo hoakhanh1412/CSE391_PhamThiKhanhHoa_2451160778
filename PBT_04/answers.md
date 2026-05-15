@@ -181,3 +181,316 @@ Giải thích:
 - Hàng 2: Item 4, 5, 6
 - Hàng 3: Item 7 — chỉ có 1 item, nằm ở cột đầu tiên (trái)
 - Item 7 không tự kéo rộng ra để lấp đầy — nó giữ nguyên kích thước `1fr` của cột
+
+## Câu C1 — Flexbox vs Grid
+
+### 1. Navigation bar ngang (logo + menu + buttons)
+
+**Dùng:** Flexbox
+
+**Giải thích:**  
+Navbar là layout 1 chiều ngang.  
+Flexbox phù hợp để:
+- căn trái/phải
+- căn giữa theo chiều dọc
+- tạo khoảng cách đều giữa các items
+
+Ví dụ:
+```css
+display: flex;
+justify-content: space-between;
+align-items: center;
+```
+
+---
+
+### 2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+
+**Dùng:** Grid
+
+**Giải thích:**  
+Đây là layout dạng lưới gồm hàng và cột.  
+CSS Grid giúp:
+- chia cột đều nhau
+- tự động xuống hàng
+- quản lý layout 2 chiều dễ dàng
+
+Ví dụ:
+```css
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+```
+
+---
+
+### 3. Layout blog: main content + sidebar
+
+**Dùng:** Grid
+
+**Giải thích:**  
+Layout blog gồm nhiều vùng:
+- sidebar
+- main content
+
+Grid phù hợp cho layout tổng thể theo vùng và cột.
+
+Ví dụ:
+```css
+grid-template-columns: 250px 1fr;
+```
+
+---
+
+### 4. Footer với 4 cột thông tin
+
+**Dùng:** Grid
+
+**Giải thích:**  
+Footer có nhiều cột đều nhau nên Grid giúp chia bố cục rõ ràng và dễ quản lý hơn.
+
+Ví dụ:
+```css
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+```
+
+---
+
+### 5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+
+**Dùng:** Flexbox
+
+**Giải thích:**  
+Card là layout theo chiều dọc:
+- ảnh
+- text
+- button
+
+Flexbox hỗ trợ sắp xếp theo cột và dùng:
+```css
+margin-top: auto;
+```
+
+để đẩy nút xuống đáy card.
+
+---
+
+ Tóm tắt
+
+| Tình huống | Nên dùng |
+|---|---|
+| Navbar ngang | Flexbox |
+| Lưới ảnh Instagram | Grid |
+| Blog + Sidebar | Grid |
+| Footer 4 cột | Grid |
+| Card sản phẩm | Flexbox |
+
+## Câu C2 — Debug Flexbox
+
+---
+
+### Lỗi 1 — Cards không đều chiều cao, nút "Mua" bị nhảy
+
+ Nguyên nhân
+
+Các card có lượng text khác nhau nên chiều cao mỗi card khác nhau.  
+Nút `.btn` không được đẩy xuống đáy card nên vị trí bị lệch.
+
+---
+
+ Code lỗi
+
+```css
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    margin: 1.5%;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 18px;
+}
+
+.card .btn {
+    padding: 10px;
+}
+```
+
+---
+
+ Code sửa
+
+```css
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    margin: 1.5%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 18px;
+}
+
+.card .btn {
+    padding: 10px;
+
+    margin-top: auto;
+}
+```
+
+---
+
+## Giải thích sửa
+
+- `display: flex`
+- `flex-direction: column`
+
+giúp card sắp xếp theo chiều dọc.
+
+`margin-top: auto;`
+sẽ đẩy nút xuống đáy card → tất cả nút nằm cùng hàng.
+
+---
+
+
+### Lỗi 2 — Item không nằm giữa màn hình
+
+ Nguyên nhân
+
+Container `.hero` chỉ có:
+```css
+display: flex;
+```
+
+nhưng chưa dùng:
+- `justify-content`
+- `align-items`
+
+nên item mặc định nằm góc trái trên.
+
+---
+
+ Code lỗi
+
+```css
+.hero {
+    height: 100vh;
+    display: flex;
+}
+
+.hero-content {
+    text-align: center;
+}
+```
+
+---
+
+ Code sửa
+
+```css
+.hero {
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+```
+
+---
+
+## Giải thích sửa
+
+- `justify-content: center`
+→ căn giữa theo chiều ngang
+
+- `align-items: center`
+→ căn giữa theo chiều dọc
+
+Kết quả: nội dung nằm chính giữa màn hình.
+
+---
+
+---
+
+### Lỗi 3 — Sidebar bị co lại
+
+ Nguyên nhân
+
+Trong Flexbox, các item mặc định có thể bị co (`flex-shrink: 1`).
+
+Khi content quá dài, sidebar bị ép nhỏ lại.
+
+---
+
+ Code lỗi
+
+```css
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+}
+
+.content {
+    flex: 1;
+}
+```
+
+---
+
+ Code sửa
+
+```css
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+}
+```
+
+---
+
+## Giải thích sửa
+
+`flex-shrink: 0;`
+
+ngăn sidebar bị co nhỏ khi content dài.
+
+Sidebar sẽ luôn giữ đúng chiều rộng 250px.
+
+---

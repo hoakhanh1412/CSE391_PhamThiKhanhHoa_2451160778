@@ -1,0 +1,168 @@
+/* grid.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* ================= MAIN GRID ================= */
+
+.container {
+  display: grid;
+
+  grid-template-columns: 200px minmax(300px, 1fr) 200px;
+
+  grid-template-areas:
+    "header header header"
+    "hero hero hero"
+    "sidebar main ads"
+    "footer footer footer";
+
+  gap: 20px;
+
+  padding: 20px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  grid-area: header;
+
+  background: #222;
+  color: white;
+
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  grid-area: hero;
+
+  background: orange;
+  color: white;
+
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+.featured-card {
+  background: white;
+  color: black;
+
+  padding: 15px;
+  border-radius: 10px;
+
+  grid-column: span 1;
+}
+
+.featured-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  grid-area: sidebar;
+
+  background: white;
+  padding: 20px;
+
+  border-radius: 10px;
+}
+
+.sidebar label {
+  display: block;
+  margin-top: 15px;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  grid-area: main;
+}
+
+/* Product Grid */
+
+.products {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.card {
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 10px;
+}
+
+.card p {
+  color: red;
+  margin-top: 5px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* ================= ADS ================= */
+
+.ads {
+  grid-area: ads;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.ads img {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  grid-area: footer;
+
+  background: #222;
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+}
