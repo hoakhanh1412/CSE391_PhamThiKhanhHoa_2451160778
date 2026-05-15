@@ -1,0 +1,121 @@
+/* flexbox.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #222;
+  padding: 15px 30px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+.auth button {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  padding: 30px;
+}
+
+.card {
+  flex: 0 0 calc(25% - 20px);
+
+  background: white;
+  border-radius: 10px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 10px;
+}
+
+.card p {
+  margin: 10px 0;
+  color: red;
+  font-weight: bold;
+}
+
+/* Nút luôn ở đáy */
+
+.card button {
+  margin-top: auto;
+
+  padding: 10px;
+  border: none;
+
+  background: #222;
+  color: white;
+
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: orange;
+}
+
+/* Hover card */
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
