@@ -1,0 +1,47 @@
+/* =========================
+   BOOTSTRAP THEME OVERRIDE
+========================= */
+
+:root {
+
+    /* PRIMARY COLORS */
+
+    --bs-primary: #14b8a6;
+
+    --bs-primary-rgb: 20, 184, 166;
+
+    --bs-secondary: #64748b;
+
+    --bs-secondary-rgb: 100, 116, 139;
+
+    /* CUSTOM COLORS */
+
+    --custom-primary-hover: #0d9488;
+
+    --custom-light-bg: #f8fafc;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary {
+
+    background-color: var(--bs-primary);
+
+    border-color: var(--bs-primary);
+}
+
+/* HOVER */
+
+.btn-primary:hover {
+
+    background-color: var(--custom-primary-hover);
+
+    border-color: var(--custom-primary-hover);
+}
+
+/* TEXT PRIMARY */
+
+.text-primary {
+
+    color: var(--bs-primary) !important;
+}
