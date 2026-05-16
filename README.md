@@ -7,6 +7,7 @@
 
 ## Tiến độ: 
 
-Hoàn thành PBT_01 và PBT_02 
-
-Đang làm PBT_03 PBT_04 & BTTH_01 BTTh_02
+|Hoàn thành   |Đang làm
+|PBT_01       |PBT_03
+|PBT_02       |PBT_04
+|BTTH_01,02   |
