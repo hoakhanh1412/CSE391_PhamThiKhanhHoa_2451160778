@@ -57,51 +57,6 @@
     font-weight: bold;
 }
 
-/* BAR */
-
-.skill-bar {
-
-    height: 12px;
-
-    background: #e2e8f0;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-}
-
-/* PROGRESS */
-
-.skill-progress {
-
-    height: 100%;
-
-    border-radius: 20px;
-
-    background: linear-gradient(
-        90deg,
-        #6366f1,
-        #8b5cf6
-    );
-}
-
-/* WIDTH */
-
-.skill-progress.html {
-    width: 95%;
-}
-
-.skill-progress.css {
-    width: 90%;
-}
-
-.skill-progress.javascript {
-    width: 85%;
-}
-
-.skill-progress.react {
-    width: 80%;
-}
 
 /* =========================
    RESPONSIVE
