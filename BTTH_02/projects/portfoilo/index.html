@@ -25,38 +25,68 @@
     <!-- HEADER -->
     <header>
 
-        <div class="logo">Hòa Khánh</div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+            <div class="container">
 
-        <!-- Checkbox toggle -->
-        <input type="checkbox" id="menu-toggle">
+                <a class="navbar-brand fw-bold text-primary fs-3" href="#">
+                    Hòa Khánh
+                </a>
 
-        <!-- Hamburger icon -->
-        <label for="menu-toggle" class="hamburger">
-            ☰
-        </label>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
-        <!-- Navigation -->
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
         </nav>
 
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section
+        class="hero min-vh-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
 
-        <h1>Hi, I'm HOA KHANH</h1>
+        <div class="container">
 
-        <p>
-            Full-Stack Developer | UI Designer | Problem Solver
-        </p>
+            <h1 class="display-2 fw-bold mb-4">
+                Hi, I'm HOA KHANH
+            </h1>
 
-        <a href="#portfolio" class="cta-button">
-            View My Work
-        </a>
+            <p class="lead mb-4 opacity-75">
+                Full-Stack Developer | UI Designer | Problem Solver
+            </p>
+
+            <a href="#portfolio" class="cta-button btn btn-light btn-lg px-5 py-3 fw-semibold rounded-pill">
+
+                View My Work
+
+            </a>
+
+        </div>
 
     </section>
     <!-- ABOUT SECTION -->
