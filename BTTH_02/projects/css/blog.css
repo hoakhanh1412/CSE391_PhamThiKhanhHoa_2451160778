@@ -7,3 +7,69 @@
 
     border-radius: 14px;
 }
+/* =========================
+   COMMENT SECTION
+========================= */
+
+.comment img.rounded-circle {
+
+    width: 50px;
+
+    height: 50px;
+
+    object-fit: cover;
+}
+
+/* REPLY AVATAR */
+
+.comment.reply img.rounded-circle {
+
+    width: 40px;
+
+    height: 40px;
+
+    object-fit: cover;
+}
+
+/* REPLY COMMENT */
+
+.comment.reply {
+
+    border-left: 3px solid #e2e8f0;
+
+    padding-left: 1rem;
+}
+
+/* REPLY BUTTON */
+
+.btn-link {
+
+    text-decoration: none;
+}
+
+/* HOVER */
+
+.btn-link:hover {
+
+    opacity: 0.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .comment.reply {
+
+        margin-left: 1rem !important;
+    }
+
+    .d-flex.justify-content-between {
+
+        flex-direction: column;
+
+        align-items: flex-start !important;
+
+        gap: 5px;
+    }
+}
