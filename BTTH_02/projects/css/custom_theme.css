@@ -88,3 +88,96 @@
 
     border-radius: 10px;
 }
+/* =========================
+   COMPLETE THEME
+========================= */
+
+:root {
+
+    /* COLOR PALETTE */
+
+    --teal-500: #14b8a6;
+
+    --teal-600: #0d9488;
+
+    --teal-100: #ccfbf1;
+
+    --slate-900: #0f172a;
+
+    --slate-700: #334155;
+
+    --slate-500: #64748b;
+
+    --slate-200: #e2e8f0;
+
+    --slate-50: #f8fafc;
+}
+
+/* BODY */
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background-color: var(--slate-50);
+
+    color: var(--slate-700);
+
+    line-height: 1.6;
+}
+
+/* HEADINGS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color: var(--slate-900);
+
+    font-weight: 700;
+}
+
+/* CARDS */
+
+.card {
+
+    border: none;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+/* CARD HOVER */
+
+.card:hover {
+
+    transform: translateY(-5px);
+}
+
+/* NAVBAR */
+
+.navbar {
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+/* INPUT FOCUS */
+
+.form-control:focus,
+.form-select:focus {
+
+    border-color: var(--bs-primary);
+
+    box-shadow: 0 0 0 0.2rem rgba(20,184,166,0.25);
+}
+
+/* FOOTER */
+
+.footer {
+
+    background: var(--slate-900);
+}
