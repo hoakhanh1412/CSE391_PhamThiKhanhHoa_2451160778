@@ -45,3 +45,46 @@
 
     color: var(--bs-primary) !important;
 }
+/* =========================
+   CUSTOM SPACING
+========================= */
+
+.py-section {
+
+    padding-top: 5rem;
+
+    padding-bottom: 5rem;
+}
+
+/* CUSTOM GAP */
+
+.gap-custom {
+
+    gap: 2rem;
+}
+
+/* =========================
+   BORDER RADIUS
+========================= */
+
+/* CARDS */
+
+.card {
+
+    border-radius: 16px;
+}
+
+/* BUTTONS */
+
+.btn {
+
+    border-radius: 8px;
+}
+
+/* INPUTS */
+
+.form-control,
+.form-select {
+
+    border-radius: 10px;
+}
