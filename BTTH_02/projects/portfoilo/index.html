@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio_HoaKhanh</title>
+
+    <!-- Link CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">Hòa Khánh</div>
+
+        <!-- Checkbox toggle -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Hamburger icon -->
+        <label for="menu-toggle" class="hamburger">
+            ☰
+        </label>
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <h1>Hi, I'm HOA KHANH</h1>
+
+        <p>
+            Full-Stack Developer | UI Designer | Problem Solver
+        </p>
+
+        <a href="#portfolio" class="cta-button">
+            View My Work
+        </a>
+
+    </section>
+    <!-- ABOUT SECTION -->
+
+    <section id="about" class="about-section">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <!-- IMAGE -->
+
+                <div class="about-image">
+
+                    <img src="images/avatar.jpg" alt="Profile Photo">
+
+                </div>
+
+                <!-- CONTENT -->
+
+                <div class="about-content">
+
+                    <h2>About Me</h2>
+
+                    <p class="lead">
+                        I'm a passionate developer with 3+ years of experience building web applications.
+                    </p>
+
+                    <p>
+                        Specialized in Frontend development with React and Vue.
+                        Also experienced in Backend with Node.js and Python.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- SKILLS SECTION -->
+
+    <section id="skills" class="skills-section">
+
+        <div class="container">
+
+            <h2>My Skills</h2>
+
+            <div class="skills-grid">
+
+                <!-- HTML -->
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+
+                        <span>HTML5</span>
+
+                        <span>95%</span>
+
+                    </div>
+
+                    <div class="skill-bar">
+
+                        <div class="skill-progress html">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CSS -->
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+
+                        <span>CSS3</span>
+
+                        <span>90%</span>
+
+                    </div>
+
+                    <div class="skill-bar">
+
+                        <div class="skill-progress css">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- JavaScript -->
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+
+                        <span>JavaScript</span>
+
+                        <span>85%</span>
+
+                    </div>
+
+                    <div class="skill-bar">
+
+                        <div class="skill-progress javascript">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- React -->
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+
+                        <span>React</span>
+
+                        <span>80%</span>
+
+                    </div>
+
+                    <div class="skill-bar">
+
+                        <div class="skill-progress react">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- PORTFOLIO SECTION -->
+
+    <section id="portfolio" class="portfolio-section">
+
+        <div class="container">
+
+            <h2>My Portfolio</h2>
+
+            <!-- FILTER BUTTONS -->
+
+            <div class="portfolio-filters">
+
+                <button class="filter-btn active">
+                    All
+                </button>
+
+                <button class="filter-btn">
+                    Web
+                </button>
+
+                <button class="filter-btn">
+                    Mobile
+                </button>
+
+                <button class="filter-btn">
+                    Design
+                </button>
+
+            </div>
+
+            <!-- GRID -->
+
+            <div class="portfolio-grid">
+
+                <!-- ITEM 1 -->
+
+                <div class="portfolio-item">
+
+                    <a href="#lightbox-1" class="lightbox-link">
+                        <img src="images/cun1.jpg" alt="Project 1">
+
+
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Website</h3>
+
+                            <p>React + Node.js</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- ITEM 2 -->
+
+                <div class="portfolio-item">
+
+                    <a href="#lightbox-2" class="lightbox-link">
+                        <img src="images/cun2.jpg" alt="Project 2">
+
+
+                        <div class="portfolio-overlay">
+
+                            <h3>Mobie App UI</h3>
+
+                            <p>Flutter Design</p>
+
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ITEM 3 -->
+
+                <div class="portfolio-item">
+
+                    <a href="#lightbox-3" class="lightbox-link">
+                        <img src="images/cun3.jpg" alt="Project 3">
+
+
+                        <div class="portfolio-overlay">
+
+                            <h3>DashBoard UI</h3>
+
+                            <p>Admin + panel</p>
+
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ITEM 4 -->
+
+                <div class="portfolio-item">
+
+                    <a href="#lightbox-4" class="lightbox-link">
+                        <img src="images/cun4.jpg" alt="Project 4">
+
+
+                        <div class="portfolio-overlay">
+
+                            <h3>Shopee Website</h3>
+
+                            <p>React + Node.js</p>
+
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ITEM 5 -->
+
+                <div class="portfolio-item">
+                    <a href="#lightbox-5" class="lightbox-link">
+                        <img src="images/cun5.jpg" alt="Project 5">
+
+
+                        <div class="portfolio-overlay">
+
+                            <h3>TLU Website</h3>
+
+                            <p>React + Node.js + JavaScript</p>
+
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ITEM 6 -->
+
+                <div class="portfolio-item">
+
+                    <a href="#lightbox-6" class="lightbox-link">
+                        <img src="images/cun6.jpg" alt="Project 6">
+
+                        <div class="portfolio-overlay">
+
+                            <h3>HUST Website</h3>
+
+                            <p>React + Node.js</p>
+
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- CONTACT SECTION -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="container">
+
+            <h2>Get In Touch</h2>
+
+            <div class="contact-wrapper">
+
+                <!-- CONTACT INFO -->
+
+                <div class="contact-info">
+
+                    <h3>Contact Information</h3>
+
+                    <p>
+                        Feel free to reach out.
+                        I'm always open to discussing new projects.
+                    </p>
+
+                    <div class="info-item">
+
+                        <span class="icon">📧</span>
+
+                        <span>
+                            hoakhanh1412@gmail.com
+                        </span>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span class="icon">📍</span>
+
+                        <span>
+                            Hanoi, Vietnam
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- FORM -->
+
+                <form class="contact-form">
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input type="text" id="name" name="name" required>
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input type="email" id="email" name="email" required>
+
+                    </div>
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                    </div>
+
+                    <!-- BUTTON -->
+
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- LIGHTBOX 1 -->
+
+    <div id="lightbox-1" class="lightbox">
+
+        <img src="images/cun1.jpg" alt="Project 1">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+
+    <!-- LIGHTBOX 2 -->
+
+    <div id="lightbox-2" class="lightbox">
+
+        <img src="images/cun2.jpg" alt="Project 2">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+
+    <!-- LIGHTBOX 3 -->
+
+    <div id="lightbox-3" class="lightbox">
+
+        <img src="images/cun3.jpg" alt="Project 3">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+
+    <!-- LIGHTBOX 4 -->
+
+    <div id="lightbox-4" class="lightbox">
+
+        <img src="images/cun4.jpg" alt="Project 4">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+
+    <!-- LIGHTBOX 5 -->
+
+    <div id="lightbox-5" class="lightbox">
+
+        <img src="images/cun5.jpg" alt="Project 5">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+
+    <!-- LIGHTBOX 6 -->
+
+    <div id="lightbox-6" class="lightbox">
+
+        <img src="images/cun6.jpg" alt="Project 6">
+
+        <a href="#" class="lightbox-close">
+            &times;
+        </a>
+
+    </div>
+</body>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <!-- FOOTER CONTENT -->
+
+        <div class="footer-content">
+
+            <!-- LOGO -->
+
+            <div class="footer-logo">
+
+                Hòa Khánh
+
+            </div>
+
+            <!-- TAGLINE -->
+
+            <p class="footer-tagline">
+
+                Building digital experiences
+
+            </p>
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="social-links">
+
+                <!-- GITHUB -->
+
+                <a href="#" class="social-link">
+
+                    GitHub
+
+                </a>
+
+                <!-- LINKEDIN -->
+
+                <a href="#" class="social-link">
+
+                    LinkedIn
+
+                </a>
+
+                <!-- EMAIL -->
+
+                <a href="#" class="social-link">
+
+                    Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+
+                &copy; 2026 Hòa Khánh.
+                All rights reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+</html>

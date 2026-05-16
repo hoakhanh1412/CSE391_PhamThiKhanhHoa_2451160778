@@ -1,0 +1,254 @@
+/* =========================
+   PORTFOLIO SECTION
+========================= */
+
+.portfolio-section {
+
+    padding: 100px 0;
+
+    background: #f8fafc;
+}
+
+/* TITLE */
+
+.portfolio-section h2 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.portfolio-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 50px;
+}
+
+/* BUTTON */
+
+.filter-btn {
+
+    background: transparent;
+
+    border: 2px solid #6366f1;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-weight: bold;
+}
+
+/* ACTIVE */
+
+.filter-btn.active,
+.filter-btn:hover {
+
+    background: #6366f1;
+
+    color: white;
+}
+
+/* =========================
+   PORTFOLIO GRID
+========================= */
+
+.portfolio-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+/* ITEM */
+
+.portfolio-item {
+
+    position: relative;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+    
+}
+
+/* IMAGE */
+
+.portfolio-item img {
+
+    width: 100%;
+
+    aspect-ratio: 4/3;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+
+    transform: scale(1.1);
+}
+/* =========================
+   OVERLAY
+========================= */
+
+.portfolio-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(30, 41, 59, 0.6) 50%,
+        transparent 100%
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 25px;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+/* SHOW OVERLAY */
+
+.portfolio-item:hover .portfolio-overlay {
+
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.portfolio-overlay p {
+
+    font-size: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media (max-width: 992px) {
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-section h2 {
+
+        font-size: 32px;
+    }
+}
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.95);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 2000;
+}
+
+/* SHOW LIGHTBOX */
+
+.lightbox:target {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+/* IMAGE */
+
+.lightbox img {
+
+    width: 80%;
+
+    max-width: 1000px;
+
+    border-radius: 12px;
+}
+
+/* CLOSE BUTTON */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 50px;
+
+    color: white;
+
+    text-decoration: none;
+}

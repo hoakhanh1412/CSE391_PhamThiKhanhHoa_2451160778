@@ -1,0 +1,82 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+
+    padding: 80px 0;
+}
+
+/* GRID */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 3rem;
+
+    align-items: center;
+}
+
+/* IMAGE */
+
+.about-image img {
+
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    margin: auto;
+}
+
+/* CONTENT */
+
+.about-content h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.about-content .lead {
+
+    font-size: 20px;
+
+    font-weight: 300;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.about-content p {
+
+    line-height: 1.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .about-image img {
+
+        width: 200px;
+        height: 200px;
+    }
+}
