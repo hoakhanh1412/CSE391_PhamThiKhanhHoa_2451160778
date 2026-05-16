@@ -24,18 +24,7 @@
    FILTER BUTTONS
 ========================= */
 
-.portfolio-filters {
 
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin-bottom: 50px;
-}
 
 /* BUTTON */
 
