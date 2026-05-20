@@ -481,3 +481,284 @@ Nhưng bắt buộc phải compile sang CSS trước khi trình duyệt sử d�
 
 ```bash
 sass scss/style.scss responsive.css
+```
+
+# Câu C1 — Phân tích Responsive Website (YouTube)
+
+Website được chọn: YouTube  
+Website: https://www.youtube.com
+
+---
+
+# 1. Mobile (375px)
+
+## Navigation
+- Thanh navigation chuyển sang dạng hamburger menu ☰
+- Sidebar bị ẩn để tiết kiệm không gian
+- Thanh tìm kiếm thu nhỏ
+
+## Content Grid
+- Video hiển thị theo 1 cột
+
+## Hidden Elements
+- Sidebar bên trái bị ẩn
+- Một số text menu biến mất, chỉ còn icon
+
+## Font Size
+- Font size nhỏ hơn desktop để phù hợp màn hình điện thoại
+
+---
+
+# 2. Tablet (768px)
+
+## Navigation
+- Hamburger menu vẫn còn
+- Thanh tìm kiếm lớn hơn mobile
+- Hiển thị thêm một số icon chức năng
+
+## Content Grid
+- Video hiển thị khoảng 2–3 cột
+
+## Hidden Elements
+- Sidebar được thu gọn
+
+## Font Size
+- Font lớn hơn mobile nhưng nhỏ hơn desktop
+
+---
+
+# 3. Desktop (1440px)
+
+## Navigation
+- Hiển thị đầy đủ sidebar bên trái
+- Thanh tìm kiếm dài hơn
+- Menu và icon hiển thị đầy đủ
+
+## Content Grid
+- Video hiển thị khoảng 4–6 cột
+
+## Hidden Elements
+- Hầu như không có thành phần bị ẩn
+
+## Font Size
+- Font lớn và dễ đọc hơn mobile/tablet
+
+---
+
+# 4. Media Queries tìm được trong DevTools
+
+## Media Query 1
+
+```css
+@media (max-width: 656px)
+```
+
+### Mục đích
+- Điều chỉnh layout cho màn hình nhỏ
+- Thu gọn navigation và sidebar
+
+---
+
+## Media Query 2
+
+```css
+@media (min-width: 1000px)
+```
+
+### Mục đích
+- Hiển thị layout desktop
+- Tăng số cột video
+- Hiển thị đầy đủ sidebar
+
+# Câu C2 — Responsive Strategy: Restaurant Booking Website
+
+---
+
+# 1. Mobile Layout (<768px)
+
+## Wireframe
+
+```text
+┌──────────────────────┐
+│ HEADER               │
+│ Logo + ☰             │
+├──────────────────────┤
+│ HERO IMAGE           │
+├──────────────────────┤
+│ FOOD GRID (1 cột)    │
+│ [Ảnh 1]              │
+│ [Ảnh 2]              │
+│ [Ảnh 3]              │
+├──────────────────────┤
+│ BOOKING FORM         │
+│ Date                 │
+│ Time                 │
+│ People               │
+│ Note                 │
+├──────────────────────┤
+│ GOOGLE MAP           │
+├──────────────────────┤
+│ FOOTER               │
+└──────────────────────┘
+```
+
+## Phân tích
+- Navigation chuyển thành hamburger ☰
+- Food grid hiển thị 1 cột
+- Form đặt bàn nằm dưới grid ảnh
+- Một số menu phụ có thể bị ẩn
+- Google Maps nằm dưới form
+
+---
+
+# 2. Tablet Layout (768px - 1023px)
+
+## Wireframe
+
+```text
+┌──────────────────────────────┐
+│ HEADER                       │
+│ Logo + Navigation            │
+├──────────────────────────────┤
+│ HERO IMAGE                   │
+├──────────────────────────────┤
+│ FOOD GRID (2 cột)            │
+│ [1] [2]                      │
+│ [3] [4]                      │
+│ [5] [6]                      │
+├──────────────────────────────┤
+│ BOOKING FORM                 │
+├──────────────────────────────┤
+│ GOOGLE MAP                   │
+├──────────────────────────────┤
+│ FOOTER                       │
+└──────────────────────────────┘
+```
+
+## Phân tích
+- Navigation hiển thị ngang
+- Grid ảnh món ăn hiển thị 2 cột
+- Form vẫn nằm dưới gallery ảnh
+- Google Maps nằm dưới form
+- Font size lớn hơn mobile
+
+---
+
+# 3. Desktop Layout (>=1024px)
+
+## Wireframe
+
+```text
+┌─────────────────────────────────────────────┐
+│ HEADER                                      │
+│ Logo + Navigation + Phone                   │
+├─────────────────────────────────────────────┤
+│ HERO IMAGE                                  │
+├──────────────────┬──────────────────────────┤
+│ FOOD GRID        │ BOOKING FORM             │
+│ (3 cột ảnh)      │ Date                     │
+│                  │ Time                     │
+│                  │ People                   │
+│                  │ Note                     │
+├──────────────────┴──────────────────────────┤
+│ GOOGLE MAP                                  │
+├─────────────────────────────────────────────┤
+│ FOOTER                                      │
+└─────────────────────────────────────────────┘
+```
+
+## Phân tích
+- Layout chia 2 cột
+- Food gallery bên trái
+- Booking form bên phải
+- Grid ảnh hiển thị 3 cột
+- Không cần sidebar riêng
+- Google Maps full width phía dưới
+
+---
+
+# 4. CSS Skeleton (Mobile First)
+
+```css
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MOBILE FIRST */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+/* HERO */
+.hero {
+    height: 300px;
+    background: gray;
+}
+
+/* FOOD GRID */
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+/* BOOKING FORM */
+.booking-form {
+    padding: 16px;
+}
+
+/* MAP */
+.map {
+    height: 300px;
+    background: lightgray;
+}
+
+/* FOOTER */
+.footer {
+    padding: 16px;
+    text-align: center;
+}
+
+/* ================= */
+/* TABLET >=768px */
+/* ================= */
+
+@media (min-width: 768px) {
+
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= */
+/* DESKTOP >=1024px */
+/* ================= */
+
+@media (min-width: 1024px) {
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+```
+
