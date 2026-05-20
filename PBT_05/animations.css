@@ -1,0 +1,134 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 40px;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+/* 1. CARD HOVER EFFECT */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGE CONTAINER */
+.image-container {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* IMAGE */
+.image-container img {
+    width: 100%;
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+/* 3. IMAGE ZOOM */
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+/* TEXT */
+.product-card h3 {
+    margin: 15px 0 10px;
+}
+
+.product-card p {
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.product-card button {
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* 2. BUTTON HOVER */
+.product-card button:hover {
+    background: orange;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* 4. LOADING SPINNER */
+.spinner {
+    width: 60px;
+    height: 60px;
+
+    border: 6px solid #ddd;
+    border-top: 6px solid black;
+
+    border-radius: 50%;
+
+    margin: 0 auto 50px;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 5. FADE IN ANIMATION */
+.fade-in {
+    opacity: 0;
+
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
