@@ -476,3 +476,8 @@ SCSS giúp:
 - Hỗ trợ responsive hiệu quả
 
 Nhưng bắt buộc phải compile sang CSS trước khi trình duyệt sử dụng được.
+
+# SCSS Compile Command
+
+```bash
+sass scss/style.scss responsive.css
