@@ -254,3 +254,283 @@ display: block;
 
 - Mobile: full width
 - >=768px: giới hạn chiều rộng giống container
+
+# Câu C1 (10đ) — Tùy biến Bootstrap
+
+---
+
+# 1. Đổi màu `$primary` sang `#E63946`
+
+## Mục tiêu
+Thay đổi màu mặc định của Bootstrap:
+- Từ màu xanh (`blue`)
+- Thành màu đỏ `#E63946`
+
+---
+
+# Quy trình thực hiện
+
+## Bước 1 — Cài NodeJS
+Bootstrap customization bằng SASS cần:
+- NodeJS
+- npm
+
+Tải NodeJS:
+https://nodejs.org/
+
+---
+
+## Bước 2 — Cài Bootstrap bằng npm
+
+```bash
+npm install bootstrap
+```
+
+---
+
+## Bước 3 — Tạo file SCSS
+
+Ví dụ:
+
+```scss
+custom.scss
+```
+
+---
+
+## Bước 4 — Override biến `$primary`
+
+```scss
+$primary: #E63946;
+```
+
+---
+
+## Bước 5 — Import Bootstrap
+
+```scss
+$primary: #E63946;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+```
+
+---
+
+# Giải thích
+
+Bootstrap sử dụng:
+- SASS variables
+- Theme system
+
+Khi đổi `$primary`:
+- tất cả component dùng màu primary sẽ tự đổi:
+  - `.btn-primary`
+  - `.bg-primary`
+  - `.text-primary`
+  - alerts
+  - badges
+  - links
+  - forms
+
+---
+
+## Bước 6 — Compile SCSS → CSS
+
+```bash
+sass custom.scss custom.css
+```
+
+---
+
+## Bước 7 — Link CSS vào HTML
+
+```html
+<link rel="stylesheet" href="custom.css">
+```
+
+---
+
+# Công cụ cần dùng
+
+| Công cụ | Mục đích |
+|---|---|
+| NodeJS | chạy npm |
+| npm | cài Bootstrap |
+| Sass | compile SCSS |
+| Bootstrap source SCSS | customize theme |
+
+---
+
+# 2. Tại sao KHÔNG nên override trực tiếp `.btn-primary`?
+
+## Cách không nên làm
+
+```css
+.btn-primary {
+    background: red;
+}
+```
+
+---
+
+# Vấn đề
+
+## Chỉ đổi được button
+
+- Chỉ `.btn-primary` đổi màu
+- Các component khác vẫn màu cũ:
+  - alerts
+  - badges
+  - text-primary
+  - links
+
+→ Theme không đồng bộ.
+
+---
+
+## Khó maintain
+
+Nếu website lớn:
+- phải sửa nhiều class
+- dễ bị conflict CSS
+- khó quản lý
+
+---
+
+## Dễ bị Bootstrap override
+
+Khi update Bootstrap:
+- CSS custom có thể bị ghi đè
+- gây lỗi giao diện
+
+---
+
+# Vì sao nên dùng SASS variables?
+
+## Chỉ sửa 1 chỗ
+
+```scss
+$primary: #E63946;
+```
+
+→ Toàn bộ theme đổi màu tự động.
+
+---
+
+## Đồng bộ giao diện
+
+Mọi component:
+- buttons
+- alerts
+- badges
+- navbar
+- links
+
+đều cùng màu.
+
+---
+
+## Dễ bảo trì
+
+- Code sạch hơn
+- Dễ scale project
+- Theo đúng cách Bootstrap thiết kế
+
+---
+
+# Câu C2 (10đ) — So sánh Bootstrap và CSS thuần
+
+---
+
+# 1. Navbar + Product Card bằng CSS thuần
+
+## CSS thuần cần:
+
+```css
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+```
+
+Ngoài ra còn phải viết:
+- spacing
+- responsive
+- hover
+- grid
+- typography
+- utilities
+
+---
+
+# 2. Bootstrap version
+
+Chỉ cần:
+
+```html
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+```
+
+```html
+<div class="card">
+```
+
+Bootstrap đã có sẵn:
+- responsive
+- spacing
+- colors
+- flexbox
+- grid
+- components
+
+---
+
+# So sánh
+
+| Tiêu chí | CSS thuần | Bootstrap |
+|---|---|---|
+| Số dòng CSS | Nhiều | Ít |
+| Thời gian phát triển | Chậm hơn | Nhanh hơn |
+| Responsive | Tự viết | Có sẵn |
+| Khả năng tùy biến | Rất cao | Trung bình - cao |
+| Dễ học | Khó hơn | Dễ hơn |
+| Code HTML | Gọn hơn | Nhiều class |
+| Thiết kế độc quyền | Tốt hơn | Dễ giống template |
+
+---
+
+# Khi nào NÊN dùng Bootstrap?
+
+## Nên dùng khi:
+- Làm project nhanh
+- Prototype
+- Dashboard admin
+- Website doanh nghiệp
+- Team nhỏ
+- Deadline ngắn
+- Người mới học frontend
+
+---
+
+# Khi nào KHÔNG nên dùng Bootstrap?
+
+## Không nên dùng khi:
+- Cần UI độc quyền
+- Website cần animation phức tạp
+- Tối ưu performance cao
+- Design system riêng
+- Muốn kiểm soát CSS hoàn toàn
+
+---
