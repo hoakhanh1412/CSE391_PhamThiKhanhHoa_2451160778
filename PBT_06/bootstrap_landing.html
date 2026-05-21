@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Landing</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">ShopEasy</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sale</a>
+                </li>
+            </ul>
+
+            <!-- SEARCH -->
+            <form class="d-flex me-3">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-light">Search</button>
+            </form>
+
+            <!-- CART -->
+            <button class="btn btn-warning">
+                🛒 Cart
+            </button>
+
+        </div>
+    </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="https://picsum.photos/1400/500?1" class="d-block w-100" alt="slide">
+
+            <div class="carousel-caption">
+                <h1>Big Sale 50%</h1>
+                <p>Best products for you</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://picsum.photos/1400/500?2" class="d-block w-100" alt="slide">
+
+            <div class="carousel-caption">
+                <h1>New Collection</h1>
+                <p>Modern fashion trends</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://picsum.photos/1400/500?3" class="d-block w-100" alt="slide">
+
+            <div class="carousel-caption">
+                <h1>Fast Delivery</h1>
+                <p>Order now today</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="container py-5">
+
+    <h2 class="text-center mb-5">Featured Products</h2>
+
+    <div class="row g-4">
+
+        <!-- CARD -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">
+                    Sale
+                </span>
+
+                <img src="https://picsum.photos/300/250?4" class="card-img-top" alt="product">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h5 class="card-title">Product 1</h5>
+
+                    <p class="card-text">
+                        Modern fashion product for everyday style.
+                    </p>
+
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">
+                        Xem nhanh
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">
+                    Sale
+                </span>
+
+                <img src="https://picsum.photos/300/250?5" class="card-img-top" alt="product">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h5 class="card-title">Product 2</h5>
+
+                    <p class="card-text">
+                        Comfortable and stylish design.
+                    </p>
+
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">
+                        Xem nhanh
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">
+                    Sale
+                </span>
+
+                <img src="https://picsum.photos/300/250?6" class="card-img-top" alt="product">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h5 class="card-title">Product 3</h5>
+
+                    <p class="card-text">
+                        Premium quality materials.
+                    </p>
+
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">
+                        Xem nhanh
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">
+                    Sale
+                </span>
+
+                <img src="https://picsum.photos/300/250?7" class="card-img-top" alt="product">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h5 class="card-title">Product 4</h5>
+
+                    <p class="card-text">
+                        Best seller product this month.
+                    </p>
+
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">
+                        Xem nhanh
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="productModal">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Product Detail</h5>
+
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="https://picsum.photos/500/300" class="img-fluid mb-3">
+
+                <p>
+                    High quality product with modern design and affordable price.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+
+                <button class="btn btn-primary">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <h5>About</h5>
+                <p>E-commerce landing page using Bootstrap.</p>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <h5>Products</h5>
+                <p>Fashion</p>
+                <p>Accessories</p>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <h5>Support</h5>
+                <p>Contact</p>
+                <p>FAQ</p>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <h5>Follow</h5>
+                <p>Facebook</p>
+                <p>Instagram</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
