@@ -58,12 +58,29 @@ button{
 
     cursor: pointer;
 
+    border: none;
+
+    background: #007bff;
+
+    color: white;
+
+    border-radius: 5px;
+
 }
 
+button:hover{
+
+    opacity: 0.9;
+
+}
 
 .statistics{
 
     margin-bottom: 20px;
+
+    display: flex;
+
+    gap: 20px;
 
 }
 
@@ -88,6 +105,13 @@ td{
 
 }
 
+th{
+
+    background: #007bff;
+
+    color: white;
+
+}
 
 .modal{
 
@@ -116,6 +140,10 @@ td{
 
     margin: 100px auto;
 
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
 }
 
 
@@ -125,6 +153,38 @@ input{
 
     padding: 10px;
 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+
+}
+
+
+.cancel-btn{
+
+    background: gray;
+
+}
+
+.cancel-btn:hover{
+
+    opacity: 0.8;
+
+}
+
+.form-actions{
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+tr:hover{
+
+    background: #f1f1f1;
 
 }
