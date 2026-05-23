@@ -27,3 +27,40 @@ closeModalBtn.addEventListener("click", function(){
     studentModal.style.display = "none";
 
 });
+
+
+
+closeModalBtn.addEventListener("click", function(){
+
+    studentModal.style.display = "none";
+
+});
+
+const studentForm = document.getElementById("studentForm");
+
+studentForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    alert("Form đã được submit");
+
+});
+
+// const editBtn = document.querySelector(".editBtn");
+
+// editBtn.addEventListener("click", function(){
+
+//     alert("Bạn vừa bấm sửa");
+
+// });
+
+// const deleteBtn = document.querySelector(".deleteBtn");
+
+
+// deleteBtn.addEventListener("click", function(){
+
+//     const confirmDelete = confirm(
+//         "Bạn có chắc muốn xóa không?"
+//     );
+
+// });
