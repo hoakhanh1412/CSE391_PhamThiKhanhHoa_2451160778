@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý sinh viên Thủy Lợi</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===================================================== -->
+    <!-- 1. TIÊU ĐỀ TRANG -->
+    <!-- ===================================================== -->
+
+    <header class="page-header">
+
+        <h1 id="pageTitle">
+            Hệ thống quản lý sinh viên
+        </h1>
+
+    </header>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 2. KHU VỰC NÚT THÊM SINH VIÊN -->
+    <!-- ===================================================== -->
+
+    <section class="top-bar">
+
+        <button id="openModalBtn">
+            Thêm sinh viên
+        </button>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 3. KHU VỰC THỐNG KÊ -->
+    <!-- ===================================================== -->
+
+    <section class="statistics">
+
+        <div class="stat-item">
+
+            <h3>Tổng số sinh viên</h3>
+
+            <span id="totalStudents">
+                0
+            </span>
+
+        </div>
+
+        <div class="stat-item">
+
+            <h3>Điểm trung bình lớp</h3>
+
+            <span id="averageScore">
+                0
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 4. KHU VỰC THÔNG BÁO -->
+    <!-- ===================================================== -->
+
+    <section class="message-area">
+
+        <p id="message">
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 5. KHU VỰC BẢNG DANH SÁCH SINH VIÊN -->
+    <!-- ===================================================== -->
+
+    <section class="table-section">
+
+        <table id="studentTable">
+
+            <!-- PHẦN ĐẦU BẢNG -->
+            <thead>
+
+                <tr>
+
+                    <th>Mã SV</th>
+
+                    <th>Họ và tên</th>
+
+                    <th>Ngày sinh</th>
+
+                    <th>Lớp học</th>
+
+                    <th>Điểm TB</th>
+
+                    <th>Email</th>
+
+                    <th>Hành động</th>
+
+                </tr>
+
+            </thead>
+
+
+            <!-- PHẦN DỮ LIỆU -->
+            <tbody id="studentTableBody">
+
+                <!-- Dữ liệu sinh viên sẽ render ở đây -->
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 6. MODAL / POPUP FORM -->
+    <!-- ===================================================== -->
+
+    <div class="modal" id="studentModal">
+
+
+        <!-- KHUNG FORM -->
+        <div class="modal-content">
+
+
+            <!-- TIÊU ĐỀ FORM -->
+            <h2 id="modalTitle">
+
+                Thêm sinh viên
+
+            </h2>
+
+
+            <!-- FORM -->
+            <form id="studentForm">
+
+
+                <!-- INPUT ẨN -->
+                <input
+                    type="hidden"
+                    id="editIndex"
+                >
+
+
+                <!-- MÃ SINH VIÊN -->
+                <div class="form-group">
+
+                    <label for="studentId">
+
+                        Mã sinh viên
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Nhập mã sinh viên"
+                    >
+
+                </div>
+
+
+
+                <!-- HỌ TÊN -->
+                <div class="form-group">
+
+                    <label for="fullName">
+
+                        Họ và tên
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Nhập họ tên"
+                    >
+
+                </div>
+
+
+
+                <!-- NGÀY SINH -->
+                <div class="form-group">
+
+                    <label for="birthDate">
+
+                        Ngày sinh
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="birthDate"
+                    >
+
+                </div>
+
+
+
+                <!-- LỚP HỌC -->
+                <div class="form-group">
+
+                    <label for="className">
+
+                        Lớp học
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="className"
+                        placeholder="Nhập lớp học"
+                    >
+
+                </div>
+
+
+
+                <!-- ĐIỂM -->
+                <div class="form-group">
+
+                    <label for="score">
+
+                        Điểm trung bình
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="score"
+                        placeholder="Nhập điểm"
+                    >
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">
+
+                        Email
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Nhập email"
+                    >
+
+                </div>
+
+
+
+                <!-- NÚT -->
+                <div class="form-actions">
+
+                    <button type="submit" id="saveBtn">
+
+                        Lưu
+
+                    </button>
+
+                    <button type="button" id="closeModalBtn">
+
+                        Hủy
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
