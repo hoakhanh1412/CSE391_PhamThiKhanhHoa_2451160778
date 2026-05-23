@@ -20,6 +20,11 @@ openModalBtn.addEventListener("click", function () {
 
     studentModal.style.display = "block";
 
+    studentForm.reset();
+
+    editIndex = -1;
+
+
 });
 
 closeModalBtn.addEventListener("click", function () {
@@ -52,7 +57,9 @@ const studentForm = document.getElementById("studentForm");
 
 // });
 
-let students = [];
+let students = JSON.parse(
+    localStorage.getItem("students")
+) || [];
 
 
 const studentTableBody = document.getElementById("studentTableBody");
@@ -118,7 +125,7 @@ function renderStudents() {
         `;
 
     });
-
+    
 }
 
 studentForm.addEventListener("submit", function (event) {
@@ -145,6 +152,8 @@ studentForm.addEventListener("submit", function (event) {
 
         students.push(student);
 
+        showMessage("Thêm sinh viên thành công");
+
     }
     else {
 
@@ -152,7 +161,11 @@ studentForm.addEventListener("submit", function (event) {
 
         editIndex = -1;
 
+        showMessage("Cập nhật sinh viên thành công");
+
     }
+
+    saveStudents();
 
     renderStudents();
 
@@ -193,9 +206,61 @@ function deleteStudent(index) {
 
         students.splice(index, 1);
 
+        saveStudents();
+
         renderStudents();
+
+        updateStatistics();
+
+
+        showMessage("Xóa sinh viên thành công");
 
     }
 
 }
+function saveStudents(){
 
+    localStorage.setItem(
+        "students",
+        JSON.stringify(students)
+    );
+
+}
+renderStudents();
+
+
+function showMessage(text){
+
+    message.textContent = text;
+
+}
+
+const totalStudents = document.getElementById("totalStudents");
+
+const averageScore = document.getElementById("averageScore");
+
+function updateStatistics(){
+
+    totalStudents.textContent = students.length;
+
+    let totalScore = 0;
+
+    students.forEach(function(student){
+
+        totalScore += Number(student.score);
+
+    });
+
+    let average = 0;
+
+    if(students.length > 0){
+
+        average = totalScore / students.length;
+
+    }
+
+    averageScore.textContent = average.toFixed(2);
+
+}
+renderStudents();
+updateStatistics();
