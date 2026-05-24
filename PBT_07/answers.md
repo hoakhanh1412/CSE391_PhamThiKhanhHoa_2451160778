@@ -174,3 +174,148 @@ var html = `<div class="card">
     <span>Giá: ${price}đ</span>
 </div>`;
 ```
+# Câu C1 — Debug JavaScript
+
+## Liệt kê 6 lỗi
+
+---
+
+### Lỗi 1 — Gán thay vì so sánh (dòng `if giaSauGiam = 0`)
+
+```javascript
+// SAI
+if (giaSauGiam = 0) {
+
+// ĐÚNG
+if (giaSauGiam === 0) {
+```
+
+**Giải thích:** Dùng `=` là gán giá trị 0 cho `giaSauGiam`, không phải so sánh. Kết quả `giaSauGiam` bị gán thành 0 và hàm trả về 0 thay vì giá trị đúng. Phải dùng `===` để so sánh.
+
+---
+
+### Lỗi 2 — Input không phải số (dòng `tinhGiaGiamGia("100000", 20)`)
+
+```javascript
+// SAI
+const gia = tinhGiaGiamGia("100000", 20)
+
+// ĐÚNG
+const gia = tinhGiaGiamGia(100000, 20)
+```
+
+**Giải thích:** `"100000"` là string, phép tính `giaBan * phanTramGiam` sẽ ra kết quả sai hoặc không mong muốn. Cần truyền số thay vì chuỗi, hoặc trong hàm phải validate và convert input.
+
+---
+
+### Lỗi 3 — Không validate giaBan (thiếu kiểm tra input)
+
+```javascript
+// THIẾU kiểm tra này trong hàm
+if (isNaN(giaBan) || isNaN(phanTramGiam)) {
+    return "Lỗi: Input không phải số";
+}
+if (giaBan < 0) {
+    return "Lỗi: Giá bán không được âm";
+}
+```
+
+**Giải thích:** Hàm không kiểm tra `giaBan` có phải số hợp lệ không, nếu truyền vào chuỗi hoặc số âm thì kết quả sai hoàn toàn.
+
+---
+
+### Lỗi 4 — phanTramGiam = 110 không bị bắt đúng cách
+
+```javascript
+// Code gốc kiểm tra đúng nhưng chỉ return chuỗi thông báo
+// Khi in ra: console.log("Giá: " + gia2) sẽ in "Giá: Phần trăm giảm không hợp lệ"
+// Không rõ ràng → nên thêm tiền tố "Lỗi:" cho nhất quán
+
+// ĐÚNG
+return "Lỗi: Phần trăm giảm không hợp lệ";
+```
+
+**Giải thích:** Thông báo lỗi không nhất quán với các hàm khác, gây khó debug khi kiểm tra kết quả trả về.
+
+---
+
+### Lỗi 5 — Thiếu dấu chấm phẩy (không nhất quán)
+
+```javascript
+// Một số dòng có ; một số không có → không nhất quán
+var giamGia = giaBan * phanTramGiam / 100   // thiếu ;
+let giaSauGiam = giaBan - giamGia           // thiếu ;
+return giaSauGiam                           // thiếu ;
+```
+
+**Giải thích:** Dù JavaScript có ASI (tự thêm dấu `;`), nhưng một số trường hợp có thể gây lỗi không mong muốn. Nên thêm `;` đầy đủ cho nhất quán.
+
+---
+
+### Lỗi 6 (Lỗi ẩn) — `var i` trong vòng lặp với `setTimeout`
+
+```javascript
+// SAI — dùng var
+for (var i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i)  // luôn in ra "Item 5"
+    }, 1000)
+}
+
+// ĐÚNG — dùng let
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i)  // in ra Item 0, 1, 2, 3, 4
+    }, 1000)
+}
+```
+
+**Giải thích:**
+- `var` có **function scope** — biến `i` chỉ có 1 bản duy nhất, dùng chung cho tất cả vòng lặp.
+- `setTimeout` chạy **sau 1 giây**, lúc đó vòng lặp đã chạy xong, `i` đã bằng `5`.
+- Kết quả: in ra `Item 5` năm lần thay vì `Item 0, 1, 2, 3, 4`.
+- `let` có **block scope** — mỗi vòng lặp tạo ra 1 biến `i` riêng biệt, `setTimeout` giữ đúng giá trị của từng vòng.
+
+---
+
+## Code đã sửa hoàn chỉnh
+
+```javascript
+function tinhGiaGiamGia(giaBan, phanTramGiam) {
+    // Sửa lỗi 2, 3: validate input
+    if (isNaN(giaBan) || isNaN(phanTramGiam)) {
+        return "Lỗi: Input không phải số";
+    }
+    if (giaBan < 0) {
+        return "Lỗi: Giá bán không được âm";
+    }
+
+    // Sửa lỗi 4: thông báo nhất quán
+    if (phanTramGiam < 0 || phanTramGiam > 100) {
+        return "Lỗi: Phần trăm giảm không hợp lệ";
+    }
+
+    var giamGia = giaBan * phanTramGiam / 100;       // Sửa lỗi 5: thêm ;
+    let giaSauGiam = giaBan - giamGia;               // Sửa lỗi 5: thêm ;
+
+    if (giaSauGiam === 0) {                          // Sửa lỗi 1: === thay vì =
+        console.log("Sản phẩm miễn phí!");
+    }
+
+    return giaSauGiam;                               // Sửa lỗi 5: thêm ;
+}
+
+// Sửa lỗi 2: truyền số thay vì chuỗi
+const gia = tinhGiaGiamGia(100000, 20);
+console.log("Giá sau giảm: " + gia + "đ");          // 80000đ
+
+const gia2 = tinhGiaGiamGia(50000, 110);
+console.log("Giá: " + gia2);                        // Lỗi: Phần trăm giảm không hợp lệ
+
+// Sửa lỗi 6: dùng let thay vì var
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);                   // Item 0, 1, 2, 3, 4
+    }, 1000);
+}
+```
