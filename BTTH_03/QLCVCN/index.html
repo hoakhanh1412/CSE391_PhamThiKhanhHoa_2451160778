@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý công việc cá nhân</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TIÊU ĐỀ ỨNG DỤNG -->
+  <header id="app-header">
+    <h1>📋 Quản lý công việc cá nhân</h1>
+    <button id="btn-open-modal">+ Thêm công việc</button>
+  </header>
+
+  <!-- KHU VỰC THỐNG KÊ -->
+  <section id="stats-section">
+    <div class="stat-box">
+      <span class="stat-label">Tổng cộng</span>
+      <span class="stat-value" id="stat-total">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Hoàn thành</span>
+      <span class="stat-value" id="stat-done">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Chưa xong</span>
+      <span class="stat-value" id="stat-pending">0</span>
+    </div>
+  </section>
+
+  <!-- KHU VỰC DANH SÁCH CÔNG VIỆC -->
+  <main id="task-list-section">
+    <div id="task-list">
+      <!-- JS sẽ render card vào đây -->
+      <p id="empty-state">Chưa có công việc nào. Hãy thêm mới!</p>
+    </div>
+  </main>
+
+  <!-- MODAL POPUP THÊM / SỬA -->
+  <div id="modal-overlay">
+    <div id="modal-box">
+
+      <div id="modal-header">
+        <h2 id="modal-title">Thêm công việc mới</h2>
+        <button id="btn-close-modal">✕</button>
+      </div>
+
+      <form id="task-form">
+        <!-- Lưu id khi sửa -->
+        <input type="hidden" id="form-task-id" />
+
+        <div class="form-group">
+          <label for="form-title">Tiêu đề <span class="required">*</span></label>
+          <input type="text" id="form-title" placeholder="Nhập tiêu đề..." />
+          <span class="form-error" id="error-title">Vui lòng nhập tiêu đề.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="form-description">Mô tả ngắn</label>
+          <textarea id="form-description" placeholder="Nhập mô tả..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-deadline">Hạn hoàn thành</label>
+          <input type="date" id="form-deadline" />
+        </div>
+
+        <div class="form-group">
+          <label for="form-priority">Mức ưu tiên</label>
+          <select id="form-priority">
+            <option value="low">Thấp</option>
+            <option value="medium" selected>Trung bình</option>
+            <option value="high">Cao</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="btn-cancel-form">Hủy</button>
+          <button type="submit" id="btn-submit-form">Lưu</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- KHU VỰC THÔNG BÁO -->
+  <div id="notification-area"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
