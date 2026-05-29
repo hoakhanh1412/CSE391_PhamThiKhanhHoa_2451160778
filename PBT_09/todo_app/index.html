@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <main class="container">
+    <header class="app-header">
+      <h1 class="app-title">TODOS</h1>
+      <p class="app-subtitle">get things done.</p>
+    </header>
+
+    <section class="input-section">
+      <form id="todoForm">
+        <div class="input-wrapper">
+          <input
+            id="todoInput"
+            type="text"
+            placeholder="add a new task..."
+            autocomplete="off"
+            maxlength="120"
+          />
+          <button type="submit" id="addBtn" aria-label="Add todo">
+            <span class="btn-icon">+</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="filter-section">
+      <div class="filter-tabs" id="filterTabs" role="tablist">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+    </section>
+
+    <section class="list-section">
+      <ul id="todoList" role="list"></ul>
+      <div class="empty-state" id="emptyState" aria-hidden="true">
+        <span class="empty-icon">✦</span>
+        <p>nothing here yet</p>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <span id="itemCount" class="item-count">0 items left</span>
+      <button id="clearCompleted" class="clear-btn" aria-label="Clear completed todos">
+        clear completed
+      </button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
