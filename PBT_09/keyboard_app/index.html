@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keyboard App</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Keyboard Gallery</h1>
+
+<img
+id="galleryImage"
+alt="Gallery Image"
+aria-label="Gallery image"
+>
+
+<div class="controls">
+
+<button
+id="prevBtn"
+aria-label="Previous image"
+>
+← Prev
+</button>
+
+<button
+id="nextBtn"
+aria-label="Next image"
+>
+Next →
+</button>
+
+</div>
+
+<p>
+← → chuyển ảnh |
+1-9 nhảy ảnh |
+Space Play/Pause
+</p>
+
+</div>
+
+<div id="modalOverlay" class="hidden">
+
+<div class="modal">
+
+<h2>Image Preview</h2>
+
+<img
+id="modalImage"
+alt="Preview"
+>
+
+<button
+id="closeModal"
+aria-label="Close modal"
+>
+Close
+</button>
+
+</div>
+
+</div>
+
+<div
+id="commandPalette"
+class="palette hidden"
+>
+
+<input
+id="commandInput"
+type="text"
+placeholder="Type command..."
+aria-label="Command Search"
+>
+
+<ul id="commandList"></ul>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
