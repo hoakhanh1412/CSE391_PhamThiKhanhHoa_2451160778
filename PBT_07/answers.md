@@ -319,3 +319,6 @@ for (let i = 0; i < 5; i++) {
     }, 1000);
 }
 ```
+
+# Phần D video thực hành OBS 
+link gg drive https://drive.google.com/file/d/1uaLQkHP9grSkogmizkVMf7wArjVCZLVB/view?usp=sharing
