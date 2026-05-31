@@ -662,3 +662,6 @@ Kết quả:
 * Ít repaint hơn
 * Tiết kiệm tài nguyên trình duyệt
 * Hiệu quả hơn khi render số lượng lớn phần tử
+
+# Phần D video OBS 
+link gg drive PBT_09 thực hành https://drive.google.com/file/d/1dlT39QpinMl_AOc6Jsum1lLWONsAbBpy/view?usp=sharing
