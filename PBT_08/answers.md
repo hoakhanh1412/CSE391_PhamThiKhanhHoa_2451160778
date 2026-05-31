@@ -522,3 +522,6 @@ miniArray.filter([1, 2, 2, 3], (val, i, arr) => arr.indexOf(val) === i);
 | Mục đích | Học thuật / hiểu cơ chế | Production |
 | API surface | Giống chuẩn (value, index, array) | Đầy đủ + `thisArg` |
 | Immutability | ✅ Không mutate mảng gốc | ✅ |
+
+# Phần D video thực hành OBS
+link gg drive https://drive.google.com/file/d/1vrFTNlMeJIw8_nmX1mznlOCa8dToWcg3/view?usp=sharing
