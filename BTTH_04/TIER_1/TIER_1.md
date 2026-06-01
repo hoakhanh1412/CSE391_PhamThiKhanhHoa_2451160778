@@ -162,16 +162,126 @@ React không quan sát        React quan sát và phản ứng
 
 ---
 
-## 🔑 Ghi nhớ cốt lõi
-
-> **Biến thường** = ghi vào tờ giấy nháp rồi vứt đi sau mỗi lần render.
-> 
-> **useState** = ghi vào sổ tay của React — React giữ lại, theo dõi, và biết khi nào cần vẽ lại màn hình.
-
-Quy tắc thực hành:
-
-- Dữ liệu **cần hiển thị lên UI** và **có thể thay đổi** → dùng `useState`
-- Dữ liệu **chỉ dùng trong tính toán tạm thời** (không cần hiển thị) → biến thường là ổn
+# 📝 Bài 1.3 — Luồng hoạt động (Flow) của React
 
 ---
+
+## 🔬 Phân tích `FlowDemo` theo từng bước trong sơ đồ
+
+### Lần chạy đầu tiên (Initial Render)
+
+```
+Bước 1 → React gọi FlowDemo()
+           → Console: "🔄 Component render!"
+
+Bước 2 → useState(1) trả về [1, setStep]
+           → JSX render với step = 1
+
+Bước 3 → Màn hình hiển thị:
+           "Bước hiện tại: 1"
+           "👋 Bước 1: Xin chào!"
+```
+
+---
+
+### Khi người dùng nhấn "Bước tiếp theo →"
+
+```
+Bước 4 → onClick kích hoạt
+           → handleClick chạy
+
+Bước 5 → setStep(step + 1)  =  setStep(2)
+           → React nhận tín hiệu: "state thay đổi!"
+
+Bước 6 → React gọi lại FlowDemo()
+           → Console: "🔄 Component render!" (lần 2)
+
+Bước 7 → useState trả về [2, setStep]  ← giá trị MỚI từ kho
+           → JSX mới với step = 2
+
+Bước 8 → React so sánh JSX cũ vs JSX mới (Reconciliation)
+           → Chỉ cập nhật đúng phần thay đổi:
+             "Bước hiện tại: 1" → "Bước hiện tại: 2"
+             <p>👋 Bước 1...</p>  →  <p>📖 Bước 2...</p>
+           → Các nút bấm KHÔNG bị cập nhật (không đổi)
+
+→ Quay về Bước 4, chờ tương tác tiếp theo
+```
+
+---
+
+## 🗺️ Sơ đồ luồng với `FlowDemo` cụ thể
+
+```
+[App khởi động]
+      ↓
+FlowDemo() được gọi lần 1
+step = 1  (giá trị khởi tạo)
+      ↓
+Màn hình: "Bước hiện tại: 1" + "👋 Bước 1: Xin chào!"
+      ↓
+[Người dùng nhấn "Bước tiếp theo →"]
+      ↓
+setStep(2)  →  React xếp lịch re-render
+      ↓
+FlowDemo() được gọi lần 2
+step = 2  (lấy từ kho React)
+      ↓
+Màn hình: "Bước hiện tại: 2" + "📖 Bước 2: Đang học React"
+      ↓
+[Người dùng nhấn "Quay lại đầu"]
+      ↓
+setStep(1)  →  React xếp lịch re-render
+      ↓
+FlowDemo() được gọi lần 3
+step = 1  (reset về 1)
+      ↓
+Màn hình trở về trạng thái ban đầu
+```
+
+---
+
+## 🔑 3 điểm quan trọng cần nhớ
+
+### 1. Console log đếm số lần render chính xác
+
+```
+Load trang:           🔄 Component render!   (lần 1)
+Nhấn nút 1 lần:      🔄 Component render!   (lần 2)
+Nhấn nút 2 lần:      🔄 Component render!   (lần 3)
+Nhấn "Quay lại đầu": 🔄 Component render!   (lần 4)
+```
+
+> 💡 `console.log` ở đầu function là cách đơn giản nhất để kiểm tra component render bao nhiêu lần — kỹ thuật debug rất thực tế.
+
+---
+
+### 2. React chỉ cập nhật phần thay đổi — không vẽ lại toàn bộ
+
+Khi `step` đổi từ `1` → `2`, React **không** xóa toàn bộ DOM rồi vẽ lại. Nó so sánh JSX cũ vs mới (gọi là **Reconciliation**) và chỉ chạm vào đúng node cần thay đổi:
+
+```
+DOM trước:                      DOM sau:
+<p>Bước hiện tại: 1</p>   →   <p>Bước hiện tại: 2</p>  ← CẬP NHẬT
+<button>Bước tiếp →</button>   <button>Bước tiếp →</button>  ← GIỮ NGUYÊN
+<button>Quay lại</button>      <button>Quay lại</button>      ← GIỮ NGUYÊN
+<p>👋 Bước 1...</p>       →   <p>📖 Bước 2...</p>       ← CẬP NHẬT
+```
+
+Đây là lý do React nhanh hơn so với việc cập nhật DOM thủ công.
+
+---
+
+### 3. `setStep(1)` khi `step` đang là `1` → React KHÔNG re-render
+
+React so sánh giá trị cũ và mới bằng `Object.is()`. Nếu giống nhau, React bỏ qua — không tốn công re-render vô ích.
+
+```jsx
+// Đang ở bước 1, nhấn "Quay lại đầu"
+setStep(1)  // step hiện tại = 1, giá trị mới = 1
+            // → React nhận ra không đổi → KHÔNG re-render
+```
+
+---
+
 
